@@ -48,3 +48,82 @@ contador=0;
                 celdas[i].style.backgroundColor="";
             }
         }
+
+        function limpiarTodo() {
+            var celda = document.getElementById("tablero").getElementsByTagName("td");
+            for (let i = 0; i < celda.length; i++) {
+                celda[i].style="background-image:none;";
+            }
+        }
+
+        function solucion1() {  
+            limpiarTodo();
+            var celda=document.getElementById("tablero");
+            var estilo= `
+            background-image: url(./img/reina.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;`;
+            celda.rows[0].cells[3].style=estilo;
+            celda.rows[1].cells[6].style=estilo;
+            celda.rows[2].cells[2].style=estilo;
+            celda.rows[3].cells[7].style=estilo;
+            celda.rows[4].cells[1].style=estilo;
+            celda.rows[5].cells[4].style=estilo;
+            celda.rows[6].cells[0].style=estilo;
+            celda.rows[7].cells[5].style=estilo;
+        }
+
+        function solucion2() {
+            limpiarTodo();
+            var celda=document.getElementById("tablero");
+            var estilo= `
+            background-image: url(./img/reina.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;`;
+            celda.rows[0].cells[3].style=estilo;
+            celda.rows[1].cells[5].style=estilo;
+            celda.rows[2].cells[7].style=estilo;
+            celda.rows[3].cells[2].style=estilo;
+            celda.rows[4].cells[0].style=estilo;
+            celda.rows[5].cells[6].style=estilo;
+            celda.rows[6].cells[4].style=estilo;
+            celda.rows[7].cells[1].style=estilo;
+        }
+
+        function solucion3() {
+            limpiarTodo();
+            var celda=document.getElementById("tablero");
+            var estilo= `
+            background-image: url(./img/reina.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;`;
+            celda.rows[0].cells[4].style=estilo;
+            celda.rows[1].cells[6].style=estilo;
+            celda.rows[2].cells[3].style=estilo;
+            celda.rows[3].cells[0].style=estilo;
+            celda.rows[4].cells[2].style=estilo;
+            celda.rows[5].cells[7].style=estilo;
+            celda.rows[6].cells[5].style=estilo;
+            celda.rows[7].cells[1].style=estilo;
+        }
+
+        function soluciones() {
+            var solucion = document.getElementById("opciones").value;
+            switch(solucion) {
+                case "1":
+                    solucion1();
+                    break;
+                case "2":
+                    solucion2();
+                    break;
+                case "3":
+                    solucion3();
+                    break;
+                default:
+                    limpiarTodo();
+                    break;
+            }
+        }
