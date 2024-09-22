@@ -54,11 +54,13 @@ contador=0;
             for (let i = 0; i < celda.length; i++) {
                 celda[i].style="background-image:none;";
             }
+            contador = 0;
+            document.getElementById("contador").innerHTML = `<p>Contador=${contador}</p>`;
         }
 
         function solucion1() {  
             limpiarTodo();
-            var celda=document.getElementById("tablero");
+            var celda=document.getElementById("tablero");           
             var estilo= `
             background-image: url(./img/reina.png);
             background-size: cover;
@@ -72,6 +74,8 @@ contador=0;
             celda.rows[5].cells[4].style=estilo;
             celda.rows[6].cells[0].style=estilo;
             celda.rows[7].cells[5].style=estilo;
+            contador = 8;
+            document.getElementById("contador").innerHTML = `<p>Contador=${contador}</p>`;
         }
 
         function solucion2() {
@@ -90,6 +94,8 @@ contador=0;
             celda.rows[5].cells[6].style=estilo;
             celda.rows[6].cells[4].style=estilo;
             celda.rows[7].cells[1].style=estilo;
+            contador = 8;
+            document.getElementById("contador").innerHTML = `<p>Contador=${contador}</p>`;
         }
 
         function solucion3() {
@@ -108,6 +114,8 @@ contador=0;
             celda.rows[5].cells[7].style=estilo;
             celda.rows[6].cells[5].style=estilo;
             celda.rows[7].cells[1].style=estilo;
+            contador = 8;
+            document.getElementById("contador").innerHTML = `<p>Contador=${contador}</p>`;
         }
 
         function soluciones() {
