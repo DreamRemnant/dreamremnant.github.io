@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy data</title>
+    <script>
+        function generar() {
+            var resultado="";
+            var matricula=223090001;
+            for (let i = 0; i < 1000; i++) {
+                resultado+=`
+                ${matricula++},
+                ${apellidosAlemanes[math.floor(Math.random)*100]},
+                ${apellidosMexicanos[math.floor(Math.random)*100]} <br>`;
+            }
+            document.getElementById("parrafo").innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Generar" onclick="generar()">
+    <input type="button" value="Guardar">
+    <p id="parrafo"></p>
+
+</body>
+</html>
