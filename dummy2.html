@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy Data</title>
+    <script>
+
+        const apellidosAlemanes = [
+            "Müller", "Schmidt", "Schneider", "Fischer", "Weber",
+            "Meyer", "Wagner", "Becker", "Hoffmann", "Schulz",
+            "Koch", "Richter", "Klein", "Wolf", "Schröder",
+            "Neumann", "Schwarz", "Zimmermann", "Braun", "Hartmann",
+            "Lange", "Schmitt", "Werner", "Krause", "Meier",
+            "Sommer", "König", "Engel", "Herrmann", "Walter",
+            "Lange", "Pohl", "Richter", "Fuchs", "Busch",
+            "Schreiber", "Zimmer", "Jansen", "Günther", "Vogel",
+            "Hermann", "Hofmann", "Keller", "Wolf", "Braun",
+            "Engelhardt", "Graf", "Albrecht", "Wiegand", "Günther",
+            "Schulte", "Seidel", "Huber", "Schubert", "Roth",
+            "Stiegler", "Dietrich", "Schrader", "Möller", "Lorenz",
+            "Kiefer", "Götz", "Krauß", "Riedel", "Arnold",
+            "Günzel", "Beck", "Dreyer", "Witt", "Putz",
+            "Huber", "Baumann", "Bock", "Engel", "Fröhlich",
+            "Krüger", "Meyer", "Keller", "Wolf", "Wenzel",
+            "Weiss", "Otten", "Schulze", "Meyer", "Schmitt",
+            "Möller", "Schreiber", "Fischer", "Schmitt", "Pfeiffer",
+            "Fiedler", "Ziegler", "Engel", "Senger", "Friedrich",
+            "Sauter", "Moser", "Eberhardt"
+        ];
+
+        const apellidosEspanoles = [
+    "García", "Fernández", "González", "Rodríguez", "López",
+    "Martínez", "Sánchez", "Pérez", "Gómez", "Martín",
+    "Díaz", "Moreno", "Muñoz", "Álvarez", "Romero",
+    "Jiménez", "Molina", "Vázquez", "Castro", "Ortiz",
+    "Ramos", "Delgado", "Navarro", "Torres", "Salazar",
+    "Cruz", "Reyes", "Hernández", "Jiménez", "Luna",
+    "Márquez", "Aguilar", "Ríos", "Cano", "Pacheco",
+    "Bermúdez", "Vega", "Serrano", "Hidalgo", "Cardenas",
+    "Silva", "Maldonado", "Cordero", "Valdez", "Pérez",
+    "Téllez", "Santos", "Alonso", "Cabrera", "Ríos",
+    "Quintero", "Ceballos", "Montoya", "Camacho", "Castillo",
+    "Solano", "Figueroa", "Duarte", "Villarreal", "Castañeda",
+    "Pérez", "Ocampo", "Orozco", "Gutiérrez", "Salas",
+    "Acosta", "Villar", "Peña", "Coronado", "Arce",
+    "Mora", "Núñez", "Bautista", "Ramírez", "Paniagua",
+    "Gonzales", "Mena", "Correa", "Sánchez", "Serrato",
+    "Montes", "Salgado", "Aguilera", "Aranda", "Tovar",
+    "Solares", "Zapata", "Contreras", "Ferrer", "Salvador",
+    "Medina", "Pérez", "Arroyo", "Lara", "Saavedra"
+];
+
+
+
+
+
+        function generar() {
+            var resultado="";
+            var matricula = 223090001;
+
+             
+
+            for (let i = 0; i < 50000; i++) {
+               resultado+= `${matricula++},
+                 ${apellidosAlemanes[Math.floor(Math.random()*100)]},
+                 ${apellidosEspanoles[Math.floor(Math.random()*100)]}, <br>`;              
+            }
+
+            document.getElementById("parrafo").innerHTML = resultado;
+
+           
+    
+        }
+
+        </script>
+
+
+
+</head>
+<body>
+
+    <input type="button" value="Generar" onclick="generar();">
+    <input type="button" value="Guardar">
+    <p id="parrafo"></p>
+</body>
+</html>
