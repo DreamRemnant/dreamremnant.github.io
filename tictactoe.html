@@ -5,73 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./js/tictactoe.js"></script>
-    <style>
-        input[type=button]{
-            width: 200px;
-            height: 200px;
-            font-size: 100px;
-        }
-
-        table {
-            position: relative;
-        }
-
-        td, tr {
-            position: relative;
-        }
-
-        td:nth-child(2)::after {
-            content: "";
-            position: absolute;
-            top: -1px;
-            bottom: -1px;
-            left: 50%;/*Coloca la linea centrada horizontalmente*/
-            width: 20px;
-            background-color: black;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        tr:nth-child(2)::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: -1px;/*Coloca la linea centrada horizontalmente*/
-            right: -1px;
-            height: 20px;
-            background-color: black;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        table::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: calc(100% * 1.414);
-            height: calc(100% * 1.414);
-            border-top: 20px solid black;
-            transform: rotate(45deg);
-            transform-origin: top left;
-            z-index: 1;
-            pointer-events: none;
-        }
-        
-        table::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: calc(100% * 1.414);
-            height: calc(100% * 1.414);
-            border-top: 20px solid black;
-            transform: rotate(-45deg);
-            transform-origin: top right;
-            z-index: 1;
-            pointer-events: none;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/tictactoe.css">
 </head>
 <body>
     <table>
@@ -91,5 +25,7 @@
             <td><input type="button" onclick="activo(this)"></td>
         </tr>
     </table>
+    <h1 id="turno">Turno X</h1>
+    <input type="submit" value="Reiniciar" onclick="reiniciar()">
 </body>
 </html>
