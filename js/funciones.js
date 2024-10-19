@@ -58,6 +58,11 @@ contador=0;
             document.getElementById("contador").innerHTML = `<p>Contador=${contador}</p>`;
         }
 
+        function Reiniciar(){
+            limpiarTodo();
+            document.getElementById("opciones").value = '--';
+        }
+
         function solucion1() {  
             limpiarTodo();
             var celda=document.getElementById("tablero");           
