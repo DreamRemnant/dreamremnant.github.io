@@ -1,5 +1,4 @@
 var turno= false;
-var contador = 0;
 
 function activo(boton) {
     boton.disabled= true;
@@ -13,6 +12,20 @@ function activo(boton) {
     }
     turno = !turno;
     verificar();
+}
+
+function reset() {
+    turno = false;
+    var botones = document.querySelectorAll("input[type='button']");
+    for(boton of botones){
+        boton.value = "";
+        boton.disabled = false;
+        document.getElementById("turno").innerHTML = "Turno X";
+        let styles = document.head.getElementsByTagName('style');
+        for (style of styles){
+            style.remove();
+        }
+    }
 }
 
 function verificar() {
@@ -164,4 +177,5 @@ function verificar() {
     function bloquear(boton) {
         boton.disabled = true;
     }
+    
 }
