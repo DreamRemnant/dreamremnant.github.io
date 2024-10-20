@@ -6,10 +6,10 @@ function activo(boton) {
 
     if (!turno) {
         boton.value= "X";
-        document.getElementsById("turno").innerHTML = "Turno O";
+        document.getElementById("turno").innerHTML = "Turno O";
     } else {
         boton.value= "O";
-        document.getElementsById("turno").innerHTML = "Turno X";
+        document.getElementById("turno").innerHTML = "Turno X";
     }
     turno = !turno;
     verificar();
@@ -18,8 +18,8 @@ function activo(boton) {
 function verificar() {
     var botones = document.querySelectorAll("input[type='button']");
     if (botones[0].value == botones[1].value && botones[1].value == botones[2].value && botones[0].value != "") {
-        document.getElementsById("turno").innerHTML = `Gana ${botones[0].value}`;
-        bloquear();
+        document.getElementById("turno").innerHTML = `Gana ${botones[0].value}`;
+        botones.forEach(bloquear);
         const style = document.createElement('style');
         style.textContent = `
         tr:nth-child(1)::after {
@@ -35,8 +35,8 @@ function verificar() {
         }`;
         document.head.appendChild(style);
     } else if (botones[3].value == botones[4].value && botones[4].value == botones[5].value && botones[3].value != "") {
-        document.getElementsById("turno").innerHTML = `Gana ${botones[0].value}`;
-        bloquear();
+        document.getElementById("turno").innerHTML = `Gana ${botones[0].value}`;
+        botones.forEach(bloquear);
         const style = document.createElement('style');
         style.textContent = `
         tr:nth-child(2)::after {
@@ -52,8 +52,8 @@ function verificar() {
         }`;
         document.head.appendChild(style);
     } else if (botones[6].value == botones[7].value && botones[7].value == botones[8].value && botones[6].value != "") {
-        document.getElementsById("turno").innerHTML = `Gana ${botones[0].value}`;
-        bloquear();
+        document.getElementById("turno").innerHTML = `Gana ${botones[0].value}`;
+        botones.forEach(bloquear);
         const style = document.createElement('style');
         style.textContent = `
         tr:nth-child(3)::after {
@@ -69,8 +69,8 @@ function verificar() {
         }`;
         document.head.appendChild(style);
     } else if (botones[0].value == botones[3].value && botones[3].value == botones[6].value && botones[0].value != "") {
-        document.getElementsById("turno").innerHTML = `Gana ${botones[0].value}`;
-        bloquear();
+        document.getElementById("turno").innerHTML = `Gana ${botones[0].value}`;
+        botones.forEach(bloquear);
         const style = document.createElement('style');
         style.textContent = `
         td:nth-child(1)::after {
@@ -86,8 +86,8 @@ function verificar() {
     }`;
         document.head.appendChild(style);
     } else if (botones[1].value == botones[4].value && botones[4].value == botones[7].value && botones[1].value != "") {
-        document.getElementsById("turno").innerHTML = `Gana ${botones[0].value}`;
-        bloquear();
+        document.getElementById("turno").innerHTML = `Gana ${botones[0].value}`;
+        botones.forEach(bloquear);
         const style = document.createElement('style');
         style.textContent = `
         td:nth-child(2)::after {
@@ -103,8 +103,8 @@ function verificar() {
         }`;
         document.head.appendChild(style);
     } else if (botones[2].value == botones[5].value && botones[5].value == botones[8].value && botones[2].value != "") {
-        document.getElementsById("turno").innerHTML = `Gana ${botones[0].value}`;
-        bloquear();
+        document.getElementById("turno").innerHTML = `Gana ${botones[0].value}`;
+        botones.forEach(bloquear);
         const style = document.createElement('style');
         style.textContent = `
         td:nth-child(3)::after {
@@ -120,8 +120,8 @@ function verificar() {
         }`;
         document.head.appendChild(style);
     } else if (botones[0].value == botones[4].value && botones[4].value == botones[8].value && botones[0].value != "") {
-        document.getElementsById("turno").innerHTML = `Gana ${botones[0].value}`;
-        bloquear();
+        document.getElementById("turno").innerHTML = `Gana ${botones[0].value}`;
+        botones.forEach(bloquear);
         const style = document.createElement('style');
         style.textContent = `
         table::after {
@@ -139,8 +139,8 @@ function verificar() {
         }`;
         document.head.appendChild(style);
     } else if (botones[2].value == botones[4].value && botones[4].value == botones[6].value && botones[2].value != "") {
-        document.getElementsById("turno").innerHTML = `Gana ${botones[0].value}`;
-        bloquear();
+        document.getElementById("turno").innerHTML = `Gana ${botones[0].value}`;
+        botones.forEach(bloquear);
         const style = document.createElement('style');
         style.textContent = `
         table::before {
@@ -157,9 +157,11 @@ function verificar() {
         pointer-events: none;
         }`;
         document.head.appendChild(style);
-    } 
-    
-    function bloquear() {
+    } else {
         
+    }
+    
+    function bloquear(boton) {
+        boton.disabled = true;
     }
 }
