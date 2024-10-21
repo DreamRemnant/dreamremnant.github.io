@@ -18,7 +18,7 @@ const apellidosAlemanes = [
     "Weiss", "Otten", "Schulze", "Meyer", "Schmitt",
     "Möller", "Schreiber", "Fischer", "Schmitt", "Pfeiffer",
     "Fiedler", "Ziegler", "Engel", "Senger", "Friedrich",
-    "Sauter", "Moser", "Eberhardt"
+    "Sauter", "Moser", "Eberhardt", "Vogt", "Schilling"
 ];
 
 const apellidosEspanoles = [
@@ -40,7 +40,8 @@ const apellidosEspanoles = [
     "Gonzales", "Mena", "Correa", "Sánchez", "Serrato",
     "Montes", "Salgado", "Aguilera", "Aranda", "Tovar",
     "Solares", "Zapata", "Contreras", "Ferrer", "Salvador",
-    "Medina", "Pérez", "Arroyo", "Lara", "Saavedra"
+    "Medina", "Pérez", "Arroyo", "Lara", "Saavedra",
+    "Rubio", "Iglesias", "Esparza", "Benítez", "Garrido"
 ];
 
 const nombresChinos = [
@@ -59,7 +60,11 @@ const nombresChinos = [
     "Lian Hong", "Gu An", "Hou Ming", "Zhong Qiang", "Qiao Li",
     "Cai Wei", "Tan Bin", "Long Fei", "Miao Lin", "Tian Yi",
     "Guan Qian", "Qu Bo", "Dong Xue", "Kou Ping", "Liu Jie",
-    "Zeng Lin", "Feng Xin", "Gong Rui", "Wei Zhi", "Lü Ming"
+    "Zeng Lin", "Feng Xin", "Gong Rui", "Wei Zhi", "Lü Ming",
+    "Zhao Lei", "Chen Xi", "Sun Tao", "Wang Jie", "Li Hua",
+    "Zhang Min", "Yang Rui", "Liu Fei", "Xu Tao", "Deng Ming",
+    "Huang Li", "Gao Jun", "Luo Fang", "Cao Xin", "Tang Zhi",
+    "Yuan Fei", "He Ming", "Shen Lei", "Ma Rui", "Wu Bin"
 ];
 
 const nombresEspanol = [
@@ -78,7 +83,11 @@ const nombresEspanol = [
     "Ricardo", "Belén", "Tomás", "Almudena", "Emilio",
     "Carolina", "Víctor", "Celia", "Ángel", "Gonzalo",
     "Paula", "Óscar", "Rocío", "Adrián", "Cristina",
-    "Santiago", "Natalia", "Rubén", "Andrea", "Marcos"
+    "Santiago", "Natalia", "Rubén", "Andrea", "Marcos",
+    "Esteban", "Lorena", "Gabriel", "Montserrat", "Mateo",
+    "Julia", "Héctor", "Inés", "Samuel", "Verónica",
+    "Guillermo", "Noelia", "Arturo", "Lorena", "Santiago",
+    "Olga", "Julián", "Iker", "Daniela", "Blanca"
 ];
 
 function generarFechaAleatoria(inicio, fin) {
