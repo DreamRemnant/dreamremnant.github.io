@@ -105,8 +105,8 @@ function generar() {
     var matricula=223090001;
     for (let i = 0; i < 100; i++) {
         resultado+=`${matricula++},
-        ${apellidosAlemanes[Math.floor(Math.random*100)]},
-        ${apellidosEspanoles[Math.floor(Math.random*100)]},
+        ${apellidosAlemanes[Math.floor(Math.random()*100)]},
+        ${apellidosEspanoles[Math.floor(Math.random()*100)]},
     ${Math.floor(Math.random()*2)+1 == 1 ? nombresEspanol[Math.floor(Math.random()*100)] : nombresChinos[Math.floor(Math.random()*100)] +" "+  nombresEspanol[Math.floor(Math.random()*100)]},
     ${matricula-1}@unikino.edu.mx,
     ${generarFechaAleatoria('1930-01-01', '2005-12-31')},
