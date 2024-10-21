@@ -1,3 +1,4 @@
+var resultado="";
 const apellidosAlemanes = [
     "Müller", "Schmidt", "Schneider", "Fischer", "Weber",
     "Meyer", "Wagner", "Becker", "Hoffmann", "Schulz",
@@ -110,9 +111,23 @@ function generarFechaAleatoria(inicio, fin) {
 }
 
 function generar() {
-    var resultado="";
+    resultado=`CREATE DATABASE IF NOT EXISTS sistema_escolar; <br>
+    USE sistema_escolar;<br>
+    DROP TABLE IF EXISTS alumnos; <br>
+    
+    CREATE TABLE IF NOT EXISTS alumnos ( <br>
+    matricula BIGINT UNSIGNED NOT NULL UNIQUE CHECK(CHAR_LENGTH(matricula)=9), <br>
+    PRIMARY KEY (matricula), <br>
+    apellido1 VARCHAR(255) NOT NULL, <br>
+    apellido2 VARCHAR(255), <br>
+    nombres VARCHAR(255) NOT NULL, <br>
+    correo VARCHAR(255) NOT NULL, <br>
+    fecha_nacimiento DATE NOT NULL <br>
+    ); <br>
+
+    INSERT INTO alumnos() VALUES `;
     var matricula=223090001;
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 50000; i++) {
         resultado+=`${matricula++},
         ${apellidosAlemanes[Math.floor(Math.random()*100)]},
         ${apellidosEspanoles[Math.floor(Math.random()*100)]},
@@ -121,6 +136,17 @@ function generar() {
     ${generarFechaAleatoria('1930-01-01', '2005-12-31')},
     <br>`;
     }
-
+    resultado=resultado.slice(0,-15)+";";
     document.getElementById("parrafo").innerHTML = resultado;
 }
+
+function generar_archivo() {
+    var archivo = document.createElement("a");
+    var salida = resultado.replace(/<br>/g,"\n").trim();
+    archivo.setAttribute("href","data:text/plane;charset=utf-8,"+encodeURIComponent(salida));
+    archivo.setAttribute("download","sistema_escolar.sql");
+    archivo.style.display="none";
+    document.body.appendChild(archivo);
+    archivo.click();
+    document.body.removeChild(archivo);
+} 
