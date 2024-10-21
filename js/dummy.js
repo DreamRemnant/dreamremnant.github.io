@@ -125,18 +125,18 @@ function generar() {
     fecha_nacimiento DATE NOT NULL <br>
     ); <br>
 
-    INSERT INTO alumnos() VALUES `;
+    INSERT INTO alumnos VALUES `;
     var matricula=223090001;
-    for (let i = 0; i < 50000; i++) {
-        resultado+=`${matricula++},
-        ${apellidosAlemanes[Math.floor(Math.random()*100)]},
-        ${apellidosEspanoles[Math.floor(Math.random()*100)]},
-    ${Math.floor(Math.random()*2)+1 == 1 ? nombresEspanol[Math.floor(Math.random()*100)] : nombresChinos[Math.floor(Math.random()*100)] +" "+  nombresEspanol[Math.floor(Math.random()*100)]},
-    ${matricula-1}@unikino.edu.mx,
-    ${generarFechaAleatoria('1930-01-01', '2005-12-31')},
+    for (let i = 0; i < 50001; i++) {
+        resultado+=`('${matricula++}',
+        '${apellidosAlemanes[Math.floor(Math.random()*100)]}',
+        '${apellidosEspanoles[Math.floor(Math.random()*100)]}',
+    '${Math.floor(Math.random()*2)+1 == 1 ? nombresEspanol[Math.floor(Math.random()*100)] : nombresChinos[Math.floor(Math.random()*100)] +" "+  nombresEspanol[Math.floor(Math.random()*100)]}',
+    '${matricula-1}@unikino.edu.mx',
+    '${generarFechaAleatoria('1930-01-01', '2005-12-31')}'),
     <br>`;
     }
-    resultado=resultado.slice(0,-15)+";";
+    resultado=resultado.slice(0,-10)+";";
     document.getElementById("parrafo").innerHTML = resultado;
 }
 
